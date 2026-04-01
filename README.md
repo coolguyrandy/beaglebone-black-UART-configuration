@@ -5,7 +5,9 @@ This repository details how to enable UART pins on BeagleBone Black running a pr
 
 Add the following line to '''/boot/uEnv.txt''' to enable UART4 (UART Pins P9_11 and P9_13 on my beaglebone black):
 
-'''uboot_overlay_addr1=BB-UART4-00A0.dtbo'''
+'''
+uboot_overlay_addr1=BB-UART4-00A0.dtbo
+'''
 
 Also, make sure to give the proper permissions to the interface:
 
