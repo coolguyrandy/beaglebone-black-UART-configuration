@@ -9,11 +9,15 @@ Add the following line to ```/boot/uEnv.txt``` to enable UART4 (UART Pins P9_11 
 uboot_overlay_addr1=BB-UART4-00A0.dtbo
 ```
 
-Also, make sure to give the proper permissions to the interface:
+Once done, reboot the BeagleBone. 
+
+Then, make sure to give the proper permissions to the interface:
 
 ```sudo chmod +rw /dev/ttyS4```
 
-Once done, reboot the BeagleBone. The UART4 interface should work properly now. 
+Note that permissions set using chmod do not persist, so this will need to be run every time the beaglebone is booted.
+
+The UART4 interface should work properly now. 
 
 # IMPORTANT
 
