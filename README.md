@@ -1,21 +1,23 @@
 # beaglebone-black-UART-configuration
-This repository details how to enable UART pins on BeagleBone Black running a provided BBB Debian 11.11 image 
+This repository details how to enable UART pins on BeagleBone Black running a provided AM335x Debian 11.7 2023-08-05 4GB eMMC IoT Flasher image (available for download [here](https://www.beagleboard.org/distros/am335x-debian-11-7-2023-08-05-4gb-emmc-iot-flasher))
 
 # Steps
 
-Add the following line to /boot/uEnv.txt to enable UART4 (UART Pins P9_11 and P9_13 on my beaglebone black):
+Add the following line to '''/boot/uEnv.txt''' to enable UART4 (UART Pins P9_11 and P9_13 on my beaglebone black):
 
-"uboot_overlay_addr1=BB-UART4-00A0.dtbo"
+'''uboot_overlay_addr1=BB-UART4-00A0.dtbo'''
 
 Also, make sure to give the proper permissions to the interface:
 
-"sudo chmod +rw /dev/ttyS4"
+'''sudo chmod +rw /dev/ttyS4'''
+
+Once done, reboot the BeagleBone. The UART4 interface should work properly now. 
 
 # IMPORTANT
 
 Older BBB debian images use the following command:
 
-config-pin <expansion_header>-<pin_number> <desired_mode> 
+'''config-pin <expansion_header>-<pin_number> <desired_mode> '''
 
 Despite being deprecated, config-pin still runs and produces the expected output on Debian 11 (even though it does not actually work). Be forewarned. 
 
